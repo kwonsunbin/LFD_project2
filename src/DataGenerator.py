@@ -42,7 +42,7 @@ def make_features(start_date, end_date, is_training):
     # TODO: select symbols
     # commodity : BrentOil, Copper, CrudeOil, Gasoline, Gold, NaturalGas, Platinum, Silver
     # currency : AUD, CNY, EUR, GBP, HKD, JPY, USD
-    table = merge_data(start_date, end_date, symbols=['Gold', 'USD'])
+    table = merge_data(start_date, end_date, symbols=['Gold'])
 
     # TODO: cleaning or filling missing value
     table.dropna(inplace=True)
