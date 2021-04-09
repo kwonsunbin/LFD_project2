@@ -49,14 +49,14 @@ def main():
     hidden_states = model.predict(test_x)
 
     expected_diff_price = np.dot(model.transmat_, model.means_)
-    diff_ratio = list(zip(*expected_diff_price))[0]
+    diff = list(zip(*expected_diff_price))[0]
 
     predicted_price = list()
 
     for idx in range(10):  # predict gold price for 10 days
         state = hidden_states[idx]
         current_price = past_price[idx]
-        next_day_price = current_price *(1+diff_ratio[state])  # predicted gold price of next day
+        next_day_price = current_price + diff[state]  # predicted gold price of next day
 
         predicted_price.append(next_day_price)
 
