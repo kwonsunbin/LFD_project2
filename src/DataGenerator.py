@@ -52,7 +52,7 @@ def make_features(start_date, end_date, is_training):
 
     # TODO:  make features
     gold_diff = np.diff(gold_price)
-    gold_price = gold_price[1:]
+    gold_price = gold_price[1:] 
 
 
     input_days = 3
