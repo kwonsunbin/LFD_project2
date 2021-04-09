@@ -52,10 +52,8 @@ def make_features(start_date, end_date, is_training):
     usd_price = table['USD_Price'].astype(float)
 
     # TODO:  make features
-    gold_price_diff_ratio = ((np.array(gold_price[:-1]) / np.array(gold_price[1:])) -1)*100
-    usd_price_diff_ratio = ((np.array(usd_price[:-1]) / np.array(usd_price[1:])) -1)*100
-    gold_price = gold_price[1:] 
-    usd_price = usd_price[1:] 
+    gold_diff = np.diff(gold_price)
+    gold_price = gold_price[1:]
 
     input_days = 3
     training_sets = list()
