@@ -130,6 +130,6 @@ def make_features(start_date, end_date, mode, input_days, span, is_training):
 
 if __name__ == "__main__":
     start_date = '2010-01-01'
-    end_date = '2020-04-18'
-    
-    print(make_features(start_date, end_date, mode="wma",input_days=1, span=3, is_training=True)[0].shape)
+    end_date = '2021-04-01'
+
+    make_features(start_date, end_date, mode="ema", input_days=1, span=14  ,is_training=True)
